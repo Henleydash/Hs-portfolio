@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f2">
+  <meta name="description"
+    content="Portfolio d’un étudiant en licence informatique : compétences, parcours et réalisations.">
+  <title><H1>Hassan DAO</H1> — Portfolio informatique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f5f2;
+      --white: #fff;
+      --ink: #171816;
+      --muted: #73756f;
+      --line: #e3e4df;
+      --accent: #b8f36a;
+      --dark: #20241f;
+      --max: 1120px
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto
+    }
+
+    header {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .brand {
+      font: 800 18px Manrope, sans-serif;
+      letter-spacing: -.06em
+    }
+
+    .brand span {
+      color: #7d9f4c
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 32px;
+      font-size: 13px;
+      color: #555850
+    }
+
+    .navlinks a:hover {
+      color: #111
+    }
+
+    .contact {
+      font-weight: 600 !important;
+      color: var(--ink) !important
+    }
+
+    .hero {
+      padding: 44px 0 78px
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: #73766c;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 9px
+    }
+
+    .eyebrow:before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #8ba45c;
+      border-radius: 50%
+    }
+
+    .cover {
+      height: 470px;
+      border-radius: 7px;
+      position: relative;
+      overflow: hidden;
+      background: #282e2a url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=85') center 48%/cover;
+      margin-top: 18px
+    }
+
+    .cover:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(14, 19, 17, .83) 0%, rgba(14, 19, 17, .55) 49%, rgba(14, 19, 17, .05) 100%), linear-gradient(0deg, rgba(10, 12, 11, .38), transparent 60%)
+    }
+
+    .cover-content {
+      position: absolute;
+      left: 29%;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 650px;
+      color: white
+    }
+
+    .cover-label {
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #e5e9df
+    }
+
+    .cover h1 {
+      font: 700 clamp(42px, 6vw, 72px)/1.02 Manrope, sans-serif;
+      letter-spacing: -.065em;
+      margin: 18px 0
+    }
+
+    .cover p {
+      max-width: 500px;
+      color: #e5e8e3;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 28px
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .button {
+      display: inline-flex;
+      padding: 13px 18px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #17200e;
+      font-weight: 700;
+      font-size: 13px;
+      align-items: center;
+      gap: 9px
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, .12);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, .4)
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 2px 0;
+      color: #6c6f67;
+      font-size: 12px
+    }
+
+    .hero-meta strong {
+      color: #272923;
+      font-weight: 600
+    }
+
+    .profile-wrap {
+      position: absolute;
+      z-index: 2;
+      left: 7%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 170px;
+      height: 170px;
+      display: grid;
+      place-items: center
+    }
+
+    .profile-wrap:before,
+    .profile-wrap:after {
+      content: "";
+      position: absolute;
+      inset: -7px;
+      border: 2px solid #42a5ff;
+      border-radius: 50%;
+      animation: blue-vibrate 1.8s ease-in-out infinite;
+      box-shadow: 0 0 14px #218cff99
+    }
+
+    .profile-wrap:after {
+      inset: -13px;
+      border-color: #79c1ff;
+      opacity: .55;
+      animation-delay: .35s
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 8px 30px #0007;
+      position: relative;
+      z-index: 1
+    }
+
+    .profile-hint {
+      position: absolute;
+      bottom: -28px;
+      white-space: nowrap;
+      font-size: 10px;
+      color: white;
+      letter-spacing: .04em;
+      text-shadow: 0 1px 5px #000
+    }
+
+    @keyframes blue-vibrate {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: .8
+      }
+
+      15% {
+        transform: translate(-2px, 1px) scale(1.025)
+      }
+
+      30% {
+        transform: translate(2px, -1px) scale(1.04);
+        opacity: 1
+      }
+
+      45% {
+        transform: translate(-1px, -2px) scale(1.02)
+      }
+
+      60% {
+        transform: translate(2px, 2px) scale(1.035)
+      }
+
+      75% {
+        transform: translate(-2px, 1px) scale(1.015)
+      }
+    }
+
+    \n section {
+      padding: 108px 0;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 24px
+    }
+
+    #competences {
+      padding-bottom: 124px
+    }
+
+    #parcours {
+      margin-top: 0;
+      padding-top: 96px;
+      border-top: 0;
+      background: #fff
+    }
+
+    .timeline {
+      border-top: 0
+    }
+
+    .entry {
+      background: #fff;
+      border: 0;
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin: 0 0 14px;
+      box-shadow: none;
+      align-items: center
+    }
+
+    .entry h3 {
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 800
+    }
+
+    .entry p {
+      font-size: 12px;
+      line-height: 1.55;
+      font-weight: 700
+    }
+
+    .entry .place {
+      font-size: 10px;
+      font-weight: 700
+    }
+
+    .date {
+      font-size: 11px;
+      font-weight: 800
+    }
+
+    .entry h3 {
+      color: #008000 !important;
+      font-weight: 900 !important
+    }
+
+    .entry p {
+      color: #000 !important;
+      font-weight: 800 !important
+    }
+
+    .entry .place {
+      color: #008000 !important;
+      font-weight: 800 !important
+    }
+
+    .entry .date,
+    .entry .date * {
+      color: #000 !important;
+      font-weight: 800 !important
+    }
+
+    .entry p {
+      color: #555950
+    }
+
+    .entry .place,
+    .date {
+      color: #686c63
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 34px
+    }
+
+    .kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: #85877f;
+      font-weight: 700
+    }
+
+    .section-head h2 {
+      font: 700 clamp(32px, 4vw, 46px)/1.1 Manrope, sans-serif;
+      letter-spacing: -.06em;
+      margin: 10px 0 0
+    }
+
+    .section-note {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 260px;
+      line-height: 1.6
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px
+    }
+
+    .skill {
+      background-color: #e8ece5;
+      background-position: center;
+      background-size: cover;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 25px;
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate
+    }
+
+    .skill:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, rgba(14, 23, 16, .57), rgba(16, 26, 18, .30) 65%, rgba(16, 26, 18, .12));
+      z-index: -1
+    }
+
+    .skill>* {
+      position: relative
+    }
+
+    .skill-num {
+      font-size: 11px;
+      color: #d8ffab;
+      font-weight: 800;
+      text-shadow: 0 1px 4px #000b
+    }
+
+    .skill h3 {
+      font: 800 18px Manrope, sans-serif;
+      color: #fff;
+      text-shadow: 0 1px 5px #000c;
+      margin: 22px 0 8px;
+      letter-spacing: -.03em
+    }
+
+    .skill p {
+      margin: 0;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.65;
+      text-shadow: 0 1px 5px #000d
+    }
+
+    .skill:nth-child(1) {
+      background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80")
+    }
+
+    .skill:nth-child(2) {
+      background-image: url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80")
+    }
+
+    .skill:nth-child(3) {
+      background-image: url("https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=900&q=80")
+    }
+
+    .skill:nth-child(4) {
+      background-image: url("https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=900&q=80")
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px
+    }
+
+    .journey-intro {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #686b63;
+      max-width: 400px
+    }
+
+    .timeline {
+      border-top: 1px solid var(--line)
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .date {
+      font-size: 12px;
+      color: #777a72;
+      padding-top: 3px
+    }
+
+    .entry h3 {
+      font: 700 16px Manrope, sans-serif;
+      margin: 0 0 6px
+    }
+
+    .entry p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0
+    }
+
+    .entry .place {
+      font-size: 11px;
+      color: #91938d;
+      margin-bottom: 8px
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .project {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      overflow: hidden
+    }
+
+    .project-art {
+      height: 190px;
+      background: #e8ebe5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .project-art:before,
+    .project-art:after {
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(35, 49, 33, .16);
+      width: 240px;
+      height: 240px;
+      border-radius: 50%
+    }
+
+    .project-art:after {
+      width: 160px;
+      height: 160px
+    }
+
+    .art-one {
+      background: linear-gradient(135deg, #d9e4d0, #eef0e9)
+    }
+
+    .art-two {
+      background: linear-gradient(135deg, #dce3e6, #f0eeea)
+    }
+
+    .art-three {
+      background: linear-gradient(135deg, #e5dfd3, #f1eee8)
+    }
+
+    .mock {
+      width: 62%;
+      height: 65%;
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid rgba(30, 40, 30, .12);
+      border-radius: 5px;
+      box-shadow: 0 12px 34px #26302120;
+      position: relative;
+      z-index: 1;
+      padding: 15px
+    }
+
+    .mock-line {
+      height: 7px;
+      border-radius: 5px;
+      background: #bac6b2;
+      width: 62%;
+      margin-bottom: 9px
+    }
+
+    .mock-line.short {
+      width: 36%;
+      background: #d4d8d0
+    }
+
+    .mock-block {
+      height: 55px;
+      background: #e9ede6;
+      border-radius: 3px;
+      margin-top: 13px
+    }
+
+    .mock-dots {
+      display: flex;
+      gap: 5px
+    }
+
+    .mock-dots i {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #b8c1b1
+    }
+
+    .project-body {
+      padding: 20px
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .project h3 {
+      font: 700 17px Manrope, sans-serif;
+      letter-spacing: -.03em;
+      margin: 0
+    }
+
+    .arrow {
+      font-size: 17px
+    }
+
+    .project p {
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 10px 0 18px;
+      min-height: 40px
+    }
+
+    .tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap
+    }
+
+    .tag {
+      font-size: 10px;
+      color: #53564f;
+      background: #f3f4f0;
+      border-radius: 20px;
+      padding: 6px 9px
+    }
+
+    .github {
+      display: inline-flex;
+      margin-top: 19px;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      border-bottom: 1px solid #acb09f;
+      padding-bottom: 3px
+    }
+
+    .closing {
+      background: var(--dark);
+      color: white;
+      padding: 55px 0
+    }
+
+    .closing-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .closing h2 {
+      font: 700 30px Manrope, sans-serif;
+      letter-spacing: -.05em;
+      margin: 8px 0
+    }
+
+    .closing p {
+      font-size: 13px;
+      color: #bdc2b9;
+      margin: 0
+    }
+
+    .closing .button {
+      white-space: nowrap
+    }
+
+    footer {
+      padding: 22px 0;
+      background: var(--dark);
+      border-top: 1px solid #ffffff20;
+      color: #a8ada4;
+      font-size: 11px
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between
+    }
+
+    .foot a {
+      color: #e7eae5
+    }
+
+    @media(max-width:760px) {
+      .profile-wrap {
+        width: 112px;
+        height: 112px;
+        left: 7%;
+        top: 50%
+      }
+
+      .cover-content {
+        left: 29%;
+        right: 5%;
+        top: 50%
+      }
+
+      .wrap {
+        width: min(100% - 32px, var(--max))
+      }
+
+      .navlinks {
+        gap: 15px
+      }
+
+      .navlinks a:not(.contact) {
+        display: none
+      }
+
+      .hero {
+        padding: 28px 0 55px
+      }
+
+      .cover {
+        height: 520px
+      }
+
+      .cover-content {
+        left: 7%;
+        right: 7%
+      }
+
+      .cover p {
+        font-size: 14px
+      }
+
+      .hero-meta {
+        gap: 20px;
+        flex-wrap: wrap
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      section {
+        padding: 76px 0
+      }
+
+      #competences {
+        padding-bottom: 92px
+      }
+
+      #parcours {
+        margin-top: 0;
+        padding-top: 82px;
+        background: #fff
+      }
+
+      .journey {
+        grid-template-columns: 1fr;
+        gap: 24px
+      }
+
+      .projects {
+        grid-template-columns: 1fr
+      }
+
+      .project-art {
+        height: 220px
+      }
+
+      .section-head {
+        align-items: start;
+        gap: 18px;
+        flex-direction: column
+      }
+
+      .section-note {
+        max-width: 400px
+      }
+
+      .closing-inner {
+        align-items: start;
+        gap: 25px;
+        flex-direction: column
+      }
+
+      .entry {
+        grid-template-columns: 88px 1fr
+      }
+    }
+
+    @media(max-width:400px) {
+      .profile-wrap {
+        width: 86px;
+        height: 86px;
+        left: 5%;
+        top: 50%
+      }
+
+      .cover-content {
+        left: 29%;
+        right: 5%;
+        top: 50%
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr
+      }
+
+      .cover {
+        height: 550px
+      }
+
+      .actions {
+        align-items: start;
+        flex-direction: column
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav"><a class="brand" href="#accueil">HS<span>•</span></a>
+      <nav class="navlinks" aria-label="Navigation"><a href="#competences">Compétences</a><a
+          href="#parcours">Parcours</a><a href="#realisations">Réalisations</a><a class="contact"
+          href="mailto:alex.martin@email.com">Me contacter ↗</a></nav>
+    </div>
+  </header>
+  <main id="accueil">
+    <div class="wrap hero">
+      <div class="eyebrow">Portfolio · Informatique</div>
+      <div class="cover">
+        <div class="profile-wrap"><img class="profile-photo"
+            src=file.png
+            alt="Photo de profil — à remplacer par votre portrait"></div>
+        <div class="cover-content">
+          <div class="cover-label">Étudiant en licence informatique · 3ᵉ année</div>
+          <h1>Bonjour, je suis<br>Hassan DAO.</h1>
+          <p>Je conçois des expériences numériques utiles et des applications bien pensées. Curieux et rigoureux, j’aime
+            transformer les idées en solutions concrètes.</p>
+          <div class="actions"><a class="button" href="#realisations">Découvrir mes projets <span>↘</span></a><a
+              class="button secondary" href="mailto:alex.martin@email.com">Échanger avec moi ↗</a></div>
+        </div>
+      </div>
+      <div class="hero-meta"><span><strong>Basé au</strong> · Burkina Faso, Ouagadougou</span><span><strong>En recherche</strong> ·
+          Stage développeur</span><span><strong>Disponibilité</strong> · Dès juin 2027</span></div>
+    </div>
+    <section id="competences">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">01 — Ce que je sais faire</div>
+            <h2>Compétences</h2>
+          </div>
+          <p class="section-note">Un socle technique solide, enrichi par des projets universitaires et personnels.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill">
+            <div class="skill-num">01 / DÉVELOPPEMENT</div>
+            <h3>Web & interfaces</h3>
+            <p>HTML, CSS, JavaScript, React<br>Interfaces accessibles et adaptatives</p>
+          </article>
+          <article class="skill">
+            <div class="skill-num">02 / PROGRAMMATION</div>
+            <h3>Logiciel & backend</h3>
+            <p>Python, Java, C, Node.js<br>API REST et programmation orientée objet</p>
+          </article>
+          <article class="skill">
+            <div class="skill-num">03 / DONNÉES</div>
+            <h3>Base de données</h3>
+            <p>SQL, PostgreSQL, MongoDB<br>Modélisation et requêtes</p>
+          </article>
+          <article class="skill">
+            <div class="skill-num">04 / OUTILS</div>
+            <h3>Collaboration</h3>
+            <p>Git, GitHub, Linux, Docker<br>Méthodes agiles et travail en équipe</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="parcours">
+      <div class="wrap journey">
+        <div>
+          <div class="kicker">02 — D’où je viens</div>
+          <h2 style="font:700 clamp(32px,4vw,46px)/1.1 Manrope,sans-serif;letter-spacing:-.06em;margin:10px 0">Parcours
+          </h2>
+          <p class="journey-intro">Étudiant à l'Université Thomas SANKARA</p>
+          <p class="journey-intro">J’apprends en construisant. Chaque cours, projet d’équipe et expérience nourrit ma
+            façon d’aborder le développement. Je cherche aujourd’hui à progresser au contact d’une équipe produit.</p>
+        </div>
+        <div class="timeline">
+          <article class="entry">
+            <div class="date">2024 — 2027</div>
+            <div>
+              <h3>Licence informatique</h3>
+              <div class="place">Université Thomas SANKARA · Ouagadougou</div>
+              <p>Algorithmique, structures de données, systèmes, bases de données et génie logiciel. Projets réalisés en
+                équipe et en autonomie.</p>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="date">Été 2025</div>
+            <div>
+              <h3>Projet web — MIABE HACKATHON</h3>
+              <div class="place">Competition · Ouagadougou</div>
+              <p>Conception d’un site vitrine responsive et accompagnement des membres à la prise en main.</p>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="date">Juin 2026</div>
+            <div>
+              <h3>Fluttithon . Attestation flutter</h3>
+              <div class="place">camps en ligne, GD Ouaga</div>
+              <p>Premiers projets en flutter et découverte des fondamentaux de l'application mobile.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="realisations">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">03 — Sélection de projets</div>
+            <h2>Réalisations</h2>
+          </div>
+          <p class="section-note">Des projets conçus pour apprendre, expérimenter et résoudre de vrais problèmes.</p>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <div class="project-art art-one">
+              <div class="mock">
+                <div class="mock-dots"><i></i><i></i><i></i></div>
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+                <div class="mock-block"></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>Campus Connect</h3><span class="arrow">↗</span>
+              </div>
+              <p>Une plateforme pour découvrir les associations et événements de son campus.</p>
+              <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span
+                  class="tag">PostgreSQL</span></div><a class="github" href="https://github.com/" target="_blank"
+                rel="noreferrer">⌘ Voir le code sur GitHub ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-art art-two">
+              <div class="mock">
+                <div class="mock-dots"><i></i><i></i><i></i></div>
+                <div class="mock-line short"></div>
+                <div class="mock-block" style="height:38px;background:#dce5e8"></div>
+                <div style="display:flex;gap:7px;margin-top:8px">
+                  <div class="mock-block" style="height:27px;flex:1;margin:0"></div>
+                  <div class="mock-block" style="height:27px;flex:1;margin:0"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>Budget Clair</h3><span class="arrow">↗</span>
+              </div>
+              <p>Une application de suivi des dépenses étudiantes avec visualisation par catégorie.</p>
+              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Python</span><span
+                  class="tag">SQLite</span></div><a class="github" href="https://github.com/" target="_blank"
+                rel="noreferrer">⌘ Voir le code sur GitHub ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-art art-three">
+              <div class="mock">
+                <div class="mock-dots"><i></i><i></i><i></i></div>
+                <div class="mock-line"></div>
+                <div style="display:flex;gap:8px;margin-top:17px;align-items:end;height:55px"><i
+                    style="height:45%;flex:1;background:#c7d2bd;border-radius:3px"></i><i
+                    style="height:85%;flex:1;background:#a9bc98;border-radius:3px"></i><i
+                    style="height:65%;flex:1;background:#d1dac9;border-radius:3px"></i><i
+                    style="height:100%;flex:1;background:#8fa47f;border-radius:3px"></i><i
+                    style="height:58%;flex:1;background:#c0ceb5;border-radius:3px"></i></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>EcoTrack</h3><span class="arrow">↗</span>
+              </div>
+              <p>Un tableau de bord léger pour suivre et mieux comprendre son empreinte numérique.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span
+                  class="tag">Chart.js</span></div><a class="github" href="https://github.com/" target="_blank"
+                rel="noreferrer">⌘ Voir le code sur GitHub ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <div class="closing">
+      <div class="wrap closing-inner">
+        <div>
+          <div class="kicker" style="color:#bdc2b9">Une idée, un projet ?</div>
+          <h2>Parlons-en.</h2>
+          <p>Je suis ouvert aux stages et aux collaborations.</p>
+        </div><a class="button" href="mailto:alex.martin@email.com">alex.martin@email.com ↗</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap foot"><span>© 2026 Hassan DAO · Portfolio étudiant</span><a href="https://github.com/"
+        target="_blank" rel="noreferrer">GitHub ↗</a></div>
+  </footer>
+</body>
+
+</html>
